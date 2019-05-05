@@ -42,10 +42,10 @@
 
         <div class="card">
           <div class="card-body">
-            <input type="checkbox" onclick="" style="float:left;margin-right:10px">
+            <input type="checkbox" onclick="" style="float:left;margin-right:10px" id="checkbox1">
             <div style="float:left;">
               <p style="font-size:9px" id="keyTask1">PLAN FOR EDUCATION</p>
-              <p >Complete the FASFA</p>
+              <p>Complete the FASFA</p>
             </div>
           </div>
         </div>
@@ -53,34 +53,34 @@
 
         <div class="card">
           <div class="card-body">
-            <input type="checkbox" onclick="" style="float:left;margin-right:10px">
+            <input type="checkbox" onclick="" style="float:left;margin-right:10px" id="checkbox2">
             <div style="float:left;">
               <p style="font-size:9px" id="keyTask2">PLAN FOR EDUCATION</p>
-              <p >Complete the FASFA</p>
+              <p>Complete the FASFA</p>
             </div>
           </div>
         </div>
   <br>
         <div class="card" style="margin:1px">
           <div class="card-body">
-            <input type="checkbox" onclick="" style="float:left;margin-right:10px">
+            <input type="checkbox" onclick="" style="float:left;margin-right:10px" id="checkbox3">
             <div style="float:left;">
               <p style="font-size:9px" id="keyTask3">PLAN FOR EDUCATION</p>
-              <p >Complete the FASFA</p>
+              <p>Complete the FASFA</p>
             </div>
           </div>
         </div>
   <br>
         <div class="card">
           <div class="card-body">
-            <input type="checkbox" onclick="" style="float:left;margin-right:10px">
+            <input type="checkbox" onclick="" style="float:left;margin-right:10px" id="checkbox4">
             <div style="float:left;">
               <p style="font-size:9px" id="keyTask4">PLAN FOR EDUCATION</p>
-              <p >Complete the FASFA</p>
+              <p>Complete the FASFA</p>
             </div>
           </div>
         </div>
-  
+
         <br><br>
       </div>
     </div>
@@ -104,17 +104,55 @@
 
 <hr style="width:90%">
 <div class="center">
-  investing made easy
+  Finances made easy
 </div>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
   <p>Footer</p>
 </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+<script type="text/javascript">
+//Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyAEZTkDS1zvcyzmOHgZc8qzfa-qHxgjONg",
+  authDomain: "finer-financing.firebaseapp.com",
+  databaseURL: "https://finer-financing.firebaseio.com",
+  projectId: "finer-financing",
+  storageBucket: "finer-financing.appspot.com",
+  messagingSenderId: "134736343683",
+  appId: "1:134736343683:web:5a34233b065a77e5"
+};
+firebase.initializeApp(firebaseConfig);
 
-<script>
-  var carName = "Volvo";
-  document.getElementById("demo").innerHTML = carName;
+//Get Elements
+const ageGroup1 = document.getElementById('ageGroup1');
+const ageGroup2 = document.getElementById('ageGroup2');
+const ageGroup3 = document.getElementById('ageGroup3');
+const ageGroup4 = document.getElementById('ageGroup4');
+const keyTask1 = document.getElementById('keyTask1');
+const keyTask2 = document.getElementById('keyTask2');
+const keyTask3 = document.getElementById('keyTask3');
+const keyTask4 = document.getElementById('keyTask4');
+const checkbox1 = document.getElementById('checkbox1');
+const checkbox2 = document.getElementById('checkbox2');
+const checkbox3 = document.getElementById('checkbox3');
+const checkbox4 = document.getElementById('checkbox4');
+//Get Database References
+const dbAgeGroup1 = firebase.database().ref().child('15-20');
+const dbAgeGroup2 = firebase.database().ref().child('18-25');
+const dbAgeGroup3 = firebase.database().ref().child('25-35');
+const dbAgeGroup4 = firebase.database().ref().child('35-45');
+const dbAllTasks = firebase.database().ref().child('mastertags');
+//Create variable to see user's age group
+var qs = new Querystring();
+var chosenAge = qs.get("myVar");
+console.log('testing');
+//Populate Inner HTMLs
+if (chosenAge == 1 || chosenAge == '1') {
+  keyTask1.innerHTML = dbAgeGroup1.child('budgeting').child('name').getValue();
+  console.log('it worked');
+}
 </script>
-
 </body>
 </html>
