@@ -14,5 +14,3 @@ The user selects what age range they fall into, and we give them achievable goal
 Articles are available for the user to see which allows them to be interested in, and add, more financial goals.
 Each goal is broken down into tasks, and when the user completes a goal/task they are given experience points.
 Experience points are for the user's own motivation.
-
-***Abandoned in Favor of Different Repository owned by Jake Au***
