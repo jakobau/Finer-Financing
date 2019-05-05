@@ -1,54 +1,260 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <title></title>
-  </head>
-  <body>
-    <div class="grid">
-      <div class="title">
-        <center>
-          <h1></h1>
+<html lang="en">
+<head>
+  <title>Finer Financing</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+    .fakeimg {
+      height: 200px;
+      background: #aaa;
+    }
+
+    .center {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    font-size: 25px;
+    }
+
+    .center1 {
+    margin: auto;
+    width: 50%;
+    font-size: 25px;
+    }
+
+    .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    }
+
+    .active, .accordion:hover {
+      background-color: #ccc;
+    }
+
+    .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    }
+
+    .accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+    }
+
+    .active:after {
+      content: "\2796"; /* Unicode character for "minus" sign (-) */
+    }
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="#">Lv. 4</a>
+    <div class="center" onClick="window.location='homepage_jake.html';">Finer Financing</div>
+    <span class="navbar-text">
+        JAKOB AU
+          <img src="images/settings.png" height="20" width="20" style="margin-right:5px;margin-left:5px">
+        About
+      </span>
+  </nav>
+
+  <hr style="width:90%">
+  <div class="center1">
+    <div class="card">
+      <div class="card-header">
+        Investing Made Easy
       </div>
-      <div class="header">
-        <center>
-          <h2>Welcome to Finer Financing™</h2>
-        </center>
-      </div>
-      <div class="content">
-        <center>
-          <br><button type="button" class="button">Ages 12-17</button></br>
-          <br><button type="button" class="button">Ages 18-24</button></br>
-          <br><button type="button" class="button">Ages 25-35</button></br>
-          <br><button type="button" class="button">Ages 35+</button></br>
-        </center>
-      </div>
-      <div class="footer">
-        <center>
-          <h3>©2019 Summit Squad
+      <div class="card-body">
+        <h6 class="card-title">Best Investing Apps for Students</h6>
+        <p class="card-text" style="font-size:13px;">Free/cheap automatic investing apps such as Acorns and RobinHood are extremely useful to young investers. Starting at a young age can maximize...</p>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Focus</button>
+        <a style="font-size:13px;">start an Acorns account</a><br>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Focus</button>
+        <a style="font-size:13px;">start a RobinHood account</a>
       </div>
     </div>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+  </div>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#config-web-app -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm Focus</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to add this task to your Focus?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-size:13px;">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="" style="font-size:13px;">Add Focus</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyAEZTkDS1zvcyzmOHgZc8qzfa-qHxgjONg",
-        authDomain: "finer-financing.firebaseapp.com",
-        databaseURL: "https://finer-financing.firebaseio.com",
-        projectId: "finer-financing",
-        storageBucket: "finer-financing.appspot.com",
-        messagingSenderId: "134736343683",
-        appId: "1:134736343683:web:5a34233b065a77e5"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
-  </body>
+ <!-- Relevant Tasks -->
+  <div class="container" style="margin-top:60px">
+    <div class="row">
+      <div class="col-sm-12">
+        <div style="border-style:solid; border-width: 1px; padding:10px">
+          <h5>Key Focus</h5>
+
+          <div class="card">
+            <div class="card-body">
+              <input type="checkbox" onclick="" style="float:left;margin-right:10px">
+              <div style="float:left;">
+                <p style="font-size:9px" id="keyTask1">PLAN FOR EDUCATION</p>
+                <p >Complete the FASFA</p>
+              </div>
+            </div>
+          </div>
+          <br>
+
+          <div class="card">
+            <div class="card-body">
+              <input type="checkbox" onclick="" style="float:left;margin-right:10px">
+              <div style="float:left;">
+                <p style="font-size:9px" id="keyTask2">PLAN FOR EDUCATION</p>
+                <p >Complete the FASFA</p>
+              </div>
+            </div>
+          </div>
+    <br>
+          <div class="card" style="margin:1px">
+            <div class="card-body">
+              <input type="checkbox" onclick="" style="float:left;margin-right:10px">
+              <div style="float:left;">
+                <p style="font-size:9px" id="keyTask3">PLAN FOR EDUCATION</p>
+                <p >Complete the FASFA</p>
+              </div>
+            </div>
+          </div>
+          <a style="font-size: 10px;margin-left:20px;color:blue" onClick="" >show more...</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- All Tasks -->
+  <div class="container" style="margin-top:50px">
+    <div class="row">
+      <div class="col-sm-12">
+        <div style="border-style:solid; border-width: 1px; padding:10px">
+          <h5>All Tasks</h5>
+          <button class="accordion">PLAN FOR EDUCATION</button>
+          <div class="panel">
+             <!-- First block has "margin-top:15px" -->
+            <p><input type="checkbox" onclick="" style="margin-right:10px;margin-top:15px">Complete the FASFA</p>
+            <p><input type="checkbox" onclick="" style="margin-right:10px">Complete the FASFA</p>
+            <p><input type="checkbox" onclick="" style="margin-right:10px">Complete the FASFA</p>
+          </div>
+          <button class="accordion">FINANCIAL INDEPENDENCE</button>
+          <div class="panel">
+            <!-- First block has "margin-top:15px" -->
+            <p><input type="checkbox" onclick="" style="margin-right:10px;margin-top:15px">Create a checkings and saving account</p>
+            <p><input type="checkbox" onclick="" style="margin-right:10px">Create a checkings and saving account</p>
+            <p><input type="checkbox" onclick="" style="margin-right:10px">Create a checkings and saving account</p>
+          </div>
+          <button class="accordion">BUDGETING</button>
+          <div class="panel">
+            <!-- First block has "margin-top:15px" -->
+            <p><input type="checkbox" onclick="" style="margin-right:10px;margin-top:15px">create a budget plan</p>
+            <p><input type="checkbox" onclick="" style="margin-right:10px">create a budget plan</p>
+            <p><input type="checkbox" onclick="" style="margin-right:10px">create a budget plan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- Completed Tasks -->
+<div class="container" style="margin-top:50px">
+  <div class="row">
+    <div class="col-sm-12">
+      <div style="border-style:solid; border-width: 1px; padding:10px">
+        <h5>Completed Tasks</h5>
+
+        <div class="card">
+          <div class="card-body">
+            <input type="checkbox" onclick="" style="float:left;margin-right:10px">
+            <div style="float:left;">
+              <p style="font-size:9px" id="keyTask1">PLAN FOR EDUCATION</p>
+              <p >Complete the FASFA</p>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="card">
+          <div class="card-body">
+            <input type="checkbox" onclick="" style="float:left;margin-right:10px">
+            <div style="float:left;">
+              <p style="font-size:9px" id="keyTask2">PLAN FOR EDUCATION</p>
+              <p >Complete the FASFA</p>
+            </div>
+          </div>
+        </div>
+  <br>
+        <div class="card" style="margin:1px">
+          <div class="card-body">
+            <input type="checkbox" onclick="" style="float:left;margin-right:10px">
+            <div style="float:left;">
+              <p style="font-size:9px" id="keyTask3">PLAN FOR EDUCATION</p>
+              <p >Complete the FASFA</p>
+            </div>
+          </div>
+        </div>
+        <a style="font-size: 10px;margin-left:20px;color:blue" onClick="" >show more...</a>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>©2019 Summit Squad</p>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+</script>
+
+</body>
 </html>
