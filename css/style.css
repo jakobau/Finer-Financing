@@ -4,28 +4,23 @@
 }
 
 .grid {
+  font-family: Verdana;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-areas:
   "title title"
   "header header"
-  "content content"
-  "sidebar sidebar"
-  "footer footer";
+  "content content";
   grid-gap: 10px;
 }
 
 .grid div:nth-child(even) {
-  border-style: solid;
-  border-color: black;
-  background-color: red;
+  background-color: E0E4CC;
 }
 
 .grid div:nth-child(odd) {
-  border-style: solid;
-  border-color: black;
-  background-color: blue;
+  background-color: E0E4CC;
 }
 
 .title {
@@ -40,24 +35,43 @@
   grid-area: content;
 }
 
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  height: 50px;
+  width: 150px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 .sidebar {
   grid-area: sidebar;
 }
 
 .footer {
-  grid-area: footer;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  border-top: solid;
+  border-width: thin;
+  background-color: white;
+  text-align: center;
 }
 
-@media screen and (min-width: 736 px)
+@media screen and (min-width: 736px)
 {
   .grid {
     display: grid;
     grid-template-columns: 1fr 500px 500px 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 25% 25% 350px 25%;
     grid-template-areas:
-    ". title title ."
+    "title title title title"
     ". header header ."
-    ". sidebar content ."
-    ". footer footer .";
+    ". content content ."
   }
 }
